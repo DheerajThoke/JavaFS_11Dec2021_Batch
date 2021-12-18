@@ -1,0 +1,17 @@
+Things we discussed about the String -
+
+The preceding discussion of data types has no mention of strings or a string data type. This is not 
+because Java does not support such a type—it does. It is just that Java’s string type, called String,
+is not a simple type. Nor is it simply an array of characters. Rather, String defines an object, and 
+a full description of it requires an understanding of several object-related features. 
+
+The String type is used to declare string variables. You can also declare arrays of strings.
+Aquoted string constant can be assigned to a String variable. A variable of type String can
+be assigned to another variable of type String. You can use an object of type String as an
+argument to println( ). 
+
+For example, consider the following fragment:
+String str = "this is a test";
+System.out.println(str);
+Here, str is an object of type String. It is assigned the string “this is a test”. This string is
+displayed by the println( ) statement.
