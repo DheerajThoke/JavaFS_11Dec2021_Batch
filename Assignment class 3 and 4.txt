@@ -1,0 +1,89 @@
+Q. What is Abstraction?
+
+A. Abstraction is one of the key concepts of object-oriented programming (OOP) languages. Its main goal is to handle complexity by hiding unnecessary details from the user. That enables the user to implement more complex logic on top of the provided abstraction without understanding or even thinking about all the hidden complexity.
+
+Data Abstraction is the property by virtue of which only the essential details are displayed to the user. The trivial or the non-essentials units are not displayed to the user. Ex: A car is viewed as a car rather than its individual components.
+
+Data Abstraction may also be defined as the process of identifying only the required characteristics of an object ignoring the irrelevant details. The properties and behaviours of an object differentiate it from other objects of similar type and also help in classifying/grouping the objects.
+
+Consider a real-life example of a man driving a car. The man only knows that pressing the accelerators will increase the speed of a car or applying brakes will stop the car, but he does not know about how on pressing the accelerator the speed is actually increasing, he does not know about the inner mechanism of the car or the implementation of the accelerator, brakes, etc in the car. This is what abstraction is. 
+
+In java, abstraction is achieved by interfaces and abstract classes. We can achieve 100% abstraction using interfaces.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. Interfaces also can have few things - what are those things can interfaces have apart from abstract methods?
+
+A. methods in interface are 100% abstract that is normal method cannot be used inside interface 
+whereas inside a abstract a normal method can be used
+
+variables declared in interfaces are by default public static final whereas in abstract class
+it can contain final, non-final, static, non-static variables
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. Is Abstract class related to Abstraction ? 
+
+A. Abstract class and Abstraction both are different concept.
+Abstract class provides the flexibility to have certain concrete methods and some other methods that the derived classes should implement.
+Abstract class have normal methods and abstract methods.
+Main purpose of abstract class is two things 1. Reusability  2. Enforcement
+Abstraction-it is one of the pillar of oops concept. Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+another way, it shows  only essential things to user and hides the internal details.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. Can interfaces have normal variables ?
+
+A. Interface has only static and final variables.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. Can interfaces have methods with definitions ? if so how ? or what ?
+
+A. Like a class, an interface can have methods and variables, but the methods declared in an interface are by default abstract (only method signature, no body).  
+
+Interfaces specify what a class must do and not how. It is the blueprint of the class.
+An Interface is about capabilities like a Player may be an interface and any class implementing Player must be able to (or must implement) move(). So it specifies a set of methods that the class has to implement.
+If a class implements an interface and does not provide method bodies for all functions specified in the interface, then the class must be declared abstract.
+A Java library example is, Comparator Interface. If a class implements this interface, then it can be used to sort a collection.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. How to implement multiple inheritance using interfaces?
+
+A. The only way to implement multiple inheritance is to implement multiple interfaces in a class. In java, one class can implements two or more interfaces. This also does not cause any ambiguity because all methods declared in interfaces are implemented in class.
+
+Below is the program to represent the same -
+
+interface MotorBike
+{
+int speed=50;
+public void totalDistance();
+}
+interface Cycle
+{
+int distance=150;
+public void speed();
+}
+public class TwoWheeler implements MotorBike,Cycle
+{
+int totalDistance;
+int avgSpeed;
+public void totalDistance()
+{
+totalDistance=speed*distance;
+System.out.println("Total Distance Travelled : "+totalDistance);
+}
+public void speed()
+{
+int avgSpeed=totalDistance/speed;
+System.out.println("Average Speed maintained : "+avgSpeed);
+}
+public static void main(String args[])
+{
+TwoWheeler t1=new TwoWheeler();
+t1.totalDistance();
+t1.speed();
+}
+}
